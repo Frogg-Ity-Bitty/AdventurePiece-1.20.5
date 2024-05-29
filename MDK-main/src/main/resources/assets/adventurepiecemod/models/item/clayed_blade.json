@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "adventurepiece:item/clayed_blade",
-		"1": "adventurepiece:item/blade_clay",
+		"0": "adventurepiecemod:item/clayed_blade",
+		"1": "adventurepiecemod:item/blade_clay",
 		"particle": "minecraft:item/iron_ingot"
 	},
 	"elements": [

@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
 	"textures": {
-		"0": "adventurepiece:item/hammers/hammer_10_fake"
+		"0": "adventurepiecemod:item/hammers/hammer_10_fake"
 	},
 	"elements": [
 		{

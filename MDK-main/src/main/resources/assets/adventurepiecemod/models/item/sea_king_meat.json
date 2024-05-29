@@ -1,13 +1,13 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "adventurepiece:item/sea_king_meat/texture0",
-		"1": "adventurepiece:item/sea_king_meat/texture1",
-		"2": "adventurepiece:item/sea_king_meat/texture2",
-		"3": "adventurepiece:item/sea_king_meat/texture3",
-		"4": "adventurepiece:item/sea_king_meat/texture4",
-		"5": "adventurepiece:item/sea_king_meat/texture5",
-		"particle": "adventurepiece:item/sea_king_meat/texture0"
+		"0": "adventurepiecemod:item/sea_king_meat/texture0",
+		"1": "adventurepiecemod:item/sea_king_meat/texture1",
+		"2": "adventurepiecemod:item/sea_king_meat/texture2",
+		"3": "adventurepiecemod:item/sea_king_meat/texture3",
+		"4": "adventurepiecemod:item/sea_king_meat/texture4",
+		"5": "adventurepiecemod:item/sea_king_meat/texture5",
+		"particle": "adventurepiecemod:item/sea_king_meat/texture0"
 	},
 	"elements": [
 		{

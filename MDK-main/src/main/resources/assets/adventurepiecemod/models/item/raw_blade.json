@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "adventurepiece:item/raw_blade",
+		"0": "adventurepiecemod:item/raw_blade",
 		"particle": "minecraft:item/iron_ingot"
 	},
 	"elements": [

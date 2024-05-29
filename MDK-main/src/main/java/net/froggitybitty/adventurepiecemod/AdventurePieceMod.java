@@ -2,6 +2,7 @@ package net.froggitybitty.adventurepiecemod;
 
 import net.froggitybitty.adventurepiecemod.block.ModBlocks;
 import net.froggitybitty.adventurepiecemod.item.ModItems;
+import net.froggitybitty.adventurepiecemod.ui.ModCreativeModeTab;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -49,6 +50,7 @@ public class AdventurePieceMod
 
         ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
+        ModCreativeModeTab.CREATIVE_MODE_TABS.register(modEventBus);
     }
 
 

@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "adventurepiece:item/handle",
-		"particle": "adventurepiece:item/handle"
+		"0": "adventurepiecemod:item/handle",
+		"particle": "adventurepiecemod:item/handle"
 	},
 	"elements": [
 		{

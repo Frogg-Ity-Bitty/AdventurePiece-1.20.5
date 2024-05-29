@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "adventurepiece:block/red_cobble"
+    "all": "adventurepiecemod:block/red_cobble"
   }
 }

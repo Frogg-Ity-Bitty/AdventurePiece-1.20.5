@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "adventurepiece:item/straw_hat_icon"
+    "layer0": "adventurepiecemod:item/straw_hat_icon"
   }
 }
