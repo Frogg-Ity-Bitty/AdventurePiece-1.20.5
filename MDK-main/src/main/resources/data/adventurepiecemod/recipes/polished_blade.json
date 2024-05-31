@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:grindstone",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "adventurepiecemod:blade_forged_stage_3"
+    }
+  },
+  "pattern": [
+    "I"
+  ],
+  "result": {
+    "count": 1,
+    "id": "adventurepiecemod:polished_blade"
+  }
+}

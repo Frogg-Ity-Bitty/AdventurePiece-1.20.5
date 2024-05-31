@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "I"
+  ],
+  "key": {
+    "#": {
+      "item": "adventurepiecemod:hammer_head_5"
+    },
+    "I": [
+      {
+        "item": "adventurepiecemod:pole"
+      }
+    ]
+  },
+  "result": {
+    "id": "adventurepiecemod:hammer_5",
+    "count": 1
+  }
+}

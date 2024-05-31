@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " WX",
+    "W#W",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:black_dye"
+    },
+    "X": {
+      "item": "minecraft:red_dye"
+    },
+    "#": {
+      "item": "adventurepiecemod:hammer_head_10_paper"
+    }
+  },
+  "result": {
+    "id": "adventurepiecemod:hammer_head_10_fake",
+    "count": 1
+  }
+}

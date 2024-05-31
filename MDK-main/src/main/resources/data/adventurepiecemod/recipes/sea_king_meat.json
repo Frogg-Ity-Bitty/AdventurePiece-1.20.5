@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 250,
+  "experience": 0.75,
+  "ingredient": {
+    "item": "adventurepiecemod:sea_king_meat_raw"
+  },
+  "result": {
+    "id": "adventurepiecemod:sea_king_meat"
+  }
+}

@@ -2,10 +2,9 @@ package net.froggitybitty.adventurepiecemod.item;
 
 import net.froggitybitty.adventurepiecemod.AdventurePieceMod;
 import net.froggitybitty.adventurepiecemod.item.custom.HammerItem;
+import net.froggitybitty.adventurepiecemod.item.custom.ModFoods;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -19,6 +18,20 @@ public class ModItems extends Items {
     public static final DeferredItem<Item> STRAW_HAT_ICON = ITEMS.registerSimpleItem("straw_hat_icon",
             new Item.Properties());
 
+    public static final Supplier<Item> SEA_KING_MEAT = ITEMS.register("sea_king_meat", () -> new Item(
+            new Item.Properties().stacksTo(64).food(ModFoods.SEA_KING_MEAT_COOKED)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("The Cooked flesh of a Sea King, Huge and immensely powerful sea creatures!").withStyle(ChatFormatting.GRAY));
+        }});
+    public static final Supplier<Item> SEA_KING_MEAT_RAW = ITEMS.register("sea_king_meat_raw", () -> new Item(
+            new Item.Properties().stacksTo(64).food(ModFoods.SEA_KING_MEAT_RAW)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("The flesh of a Sea King, Huge and immensely powerful sea creatures!").withStyle(ChatFormatting.GRAY));
+        }});
+
+    // Hammer parts ----------------------------------------------------------------------------------------------------
     public static final Supplier<SwordItem> POLE = ITEMS.register("pole", () -> new SwordItem(Tiers.WOOD,
             new Item.Properties().attributes(
                     SwordItem.createAttributes(Tiers.WOOD, 1, -2.2f)
@@ -64,6 +77,7 @@ public class ModItems extends Items {
             pTooltipComponents.add(Component.literal("A 10 Ton Hammer, needs 100 strength to use.").withStyle(ChatFormatting.GRAY));
     }});
 
+    // Fake Hammer parts -----------------------------------------------------------------------------------------------
     public static final Supplier<Item> HAMMER_HEAD_5_PAPER = ITEMS.register("hammer_head_5_paper", () -> new Item(
             new Item.Properties().stacksTo(16)){
         @Override
@@ -104,6 +118,71 @@ public class ModItems extends Items {
         public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
             pTooltipComponents.add(Component.literal("A fake 10 Ton Hammer").withStyle(ChatFormatting.GRAY));
         }});
+
+    // Blade parts -----------------------------------------------------------------------------------------------------
+    public static final Supplier<Item> RAW_BLADE = ITEMS.register("raw_blade", () -> new Item(
+            new Item.Properties().stacksTo(16)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("Raw steel that still needs to be forged.").withStyle(ChatFormatting.GRAY));
+        }});
+    public static final Supplier<Item> BLADE_FORGED_STAGE_1 = ITEMS.register("blade_forged_stage_1", () -> new Item(
+            new Item.Properties().stacksTo(16)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("It is starting to look like a blade now.").withStyle(ChatFormatting.GRAY));
+        }});
+    public static final Supplier<Item> BLADE_FORGED_STAGE_2 = ITEMS.register("blade_forged_stage_2", () -> new Item(
+            new Item.Properties().stacksTo(16)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("Getting better, just one more!").withStyle(ChatFormatting.GRAY));
+        }});
+    public static final Supplier<Item> BLADE_FORGED_STAGE_3 = ITEMS.register("blade_forged_stage_3", () -> new Item(
+            new Item.Properties().stacksTo(16)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("Now polish it on a grindstone!").withStyle(ChatFormatting.GRAY));
+        }});
+    public static final Supplier<Item> POLISHED_BLADE = ITEMS.register("polished_blade", () -> new Item(
+            new Item.Properties().stacksTo(16)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("Good, now put clay on it for differential tempering.").withStyle(ChatFormatting.GRAY));
+        }});
+    public static final Supplier<Item> CLAYED_BLADE = ITEMS.register("clayed_blade", () -> new Item(
+            new Item.Properties().stacksTo(16)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("Put it in a furnace and then drop it in water.").withStyle(ChatFormatting.GRAY));
+        }});
+    public static final Supplier<Item> UNSHARPENED_BLADE = ITEMS.register("unsharpened_blade", () -> new Item(
+            new Item.Properties().stacksTo(16)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("Now just sharpen it on a grindstone.").withStyle(ChatFormatting.GRAY));
+        }});
+    public static final Supplier<Item> BLADE = ITEMS.register("blade", () -> new Item(
+            new Item.Properties().stacksTo(16)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("Perfect! Now put a handle on it and its done!").withStyle(ChatFormatting.GRAY));
+        }});
+    public static final Supplier<Item> HANDLE = ITEMS.register("handle", () -> new Item(
+            new Item.Properties().stacksTo(16)){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("Put it on a blade to make a sword").withStyle(ChatFormatting.GRAY));
+        }});
+    public static final Supplier<SwordItem> BASIC_KATANA = ITEMS.register("basic_katana", () -> new SwordItem(Tiers.DIAMOND,
+            new Item.Properties().attributes(
+                    SwordItem.createAttributes(Tiers.DIAMOND, 3, -2.4f)
+            )){
+        @Override
+        public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+            pTooltipComponents.add(Component.literal("A standard quality Katana.").withStyle(ChatFormatting.GRAY));
+        }});
+
 
 
 

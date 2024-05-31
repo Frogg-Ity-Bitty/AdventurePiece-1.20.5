@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "adventurepiecemod:handle"
+    },
+    {
+      "item": "adventurepiecemod:blade"
+    }
+  ],
+  "result": {
+    "id": "adventurepiecemod:basic_katana"
+  }
+}

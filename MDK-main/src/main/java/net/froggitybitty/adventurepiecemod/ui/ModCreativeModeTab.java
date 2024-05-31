@@ -38,6 +38,18 @@ public class ModCreativeModeTab {
                 output.accept(HAMMER_10.get());
                 output.accept(HAMMER_5_FAKE.get());
                 output.accept(HAMMER_10_FAKE.get());
+                output.accept(SEA_KING_MEAT.get());
+                output.accept(SEA_KING_MEAT_RAW.get());
+                output.accept(RAW_BLADE.get());
+                output.accept(BLADE_FORGED_STAGE_1.get());
+                output.accept(BLADE_FORGED_STAGE_2.get());
+                output.accept(BLADE_FORGED_STAGE_3.get());
+                output.accept(POLISHED_BLADE.get());
+                output.accept(CLAYED_BLADE.get());
+                output.accept(UNSHARPENED_BLADE.get());
+                output.accept(BLADE.get());
+                output.accept(HANDLE.get());
+                output.accept(BASIC_KATANA.get());
 
             }).build());
 }
