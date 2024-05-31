@@ -1,4 +1,4 @@
-package net.froggitybitty.adventurepiecemod.stats.strengthstat;
+package net.froggitybitty.adventurepiecemod.stats;
 
 import com.mojang.serialization.Codec;
 import net.froggitybitty.adventurepiecemod.AdventurePieceMod;
@@ -9,7 +9,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import java.util.function.Supplier;
 
 
-public class StrengthStatDataAttachment {
+public class DataAttachmentProvider {
     public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.ATTACHMENT_TYPES, AdventurePieceMod.MODID);
 
     public static final Supplier<AttachmentType<Float>> STRENGTH_STAT = ATTACHMENT_TYPES.register(

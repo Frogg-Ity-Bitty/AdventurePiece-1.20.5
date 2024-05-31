@@ -2,7 +2,7 @@ package net.froggitybitty.adventurepiecemod;
 
 import net.froggitybitty.adventurepiecemod.block.ModBlocks;
 import net.froggitybitty.adventurepiecemod.item.ModItems;
-import net.froggitybitty.adventurepiecemod.stats.strengthstat.StrengthStatDataAttachment;
+import net.froggitybitty.adventurepiecemod.stats.DataAttachmentProvider;
 import net.froggitybitty.adventurepiecemod.ui.ModCreativeModeTab;
 import org.slf4j.Logger;
 
@@ -35,7 +35,7 @@ public class AdventurePieceMod
         ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
         ModCreativeModeTab.CREATIVE_MODE_TABS.register(modEventBus);
-        StrengthStatDataAttachment.ATTACHMENT_TYPES.register(modEventBus);
+        DataAttachmentProvider.ATTACHMENT_TYPES.register(modEventBus);
     }
 
 
