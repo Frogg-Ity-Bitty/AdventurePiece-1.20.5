@@ -64,7 +64,7 @@ public class AgilityStat {
     
     public static void setBaseSpeed(Player player){
         agilityStat = player.getData(AGILITY_STAT);
-        double movementSpeedModifier = 0.7F + (0.000007 * agilityStat);
+        double movementSpeedModifier = 0.7d + (0.007 * agilityStat);
         player.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(movementSpeedModifier);
     }
     public static void setBaseFallDamage(Player player){
