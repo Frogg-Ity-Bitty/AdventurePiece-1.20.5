@@ -10,6 +10,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import net.neoforged.neoforge.event.entity.living.LivingHurtEvent;
+import org.spongepowered.asm.mixin.MixinEnvironment;
 
 import static net.froggitybitty.adventurepiecemod.stats.DataAttachmentProvider.STRENGTH_EXP;
 import static net.froggitybitty.adventurepiecemod.stats.DataAttachmentProvider.STRENGTH_STAT;
@@ -22,38 +23,40 @@ public class StrengthStat {
     public static float strengthExpLevelUp;
 
     public StrengthStat(IEventBus modBus) {
-        NeoForge.EVENT_BUS.addListener(StrengthStat::detectDamage);
+        NeoForge.EVENT_BUS.addListener(StrengthStat::onLivingHurt);
         NeoForge.EVENT_BUS.addListener(StrengthStat::onLivingJump);
     }
 
     public static void addStrengthExp(Player player, float addXp){
         player.setData(STRENGTH_EXP, player.getData(STRENGTH_EXP) + addXp);
     }
-    public static void addStrengthStat(Player player, float number){
-        player.setData(STRENGTH_STAT, player.getData(STRENGTH_STAT) + number);
+    public static void addStrengthStat(Player player, float addLevel){
+        player.setData(STRENGTH_STAT, player.getData(STRENGTH_STAT) + addLevel);
     }
 
     @SubscribeEvent
-    public static void detectDamage(LivingHurtEvent event){
+    public static void onLivingHurt(LivingHurtEvent event){
         if (event.getSource().getEntity() instanceof Player player){
-            if (!event.getSource().isIndirect()){
-                playerDmg = event.getAmount();
-                addStrengthExp(player, playerDmg);
-                strengthStat = player.getData(STRENGTH_STAT);
-                strengthExp = player.getData(STRENGTH_EXP);
-                strengthExpLevelUp = 100f + (strengthStat * (strengthStat * 0.2f));
-                if (strengthExp >= strengthExpLevelUp){
-                    addStrengthStat(player, 1);
-                    strengthExp -= strengthExpLevelUp;
-                    setBaseDamage(player);
-                    player.setData(STRENGTH_EXP, strengthExp);
+            if (!player.level().isClientSide){
+                if (!event.getSource().isIndirect()) {
+                    playerDmg = event.getAmount();
+                    addStrengthExp(player, playerDmg);
                     strengthStat = player.getData(STRENGTH_STAT);
+                    strengthExp = player.getData(STRENGTH_EXP);
+                    strengthExpLevelUp = 100f + (strengthStat * (strengthStat * 0.2f));
+                    if (strengthExp >= strengthExpLevelUp) {
+                        addStrengthStat(player, 1);
+                        strengthExp -= strengthExpLevelUp;
+                        setBaseDamage(player);
+                        player.setData(STRENGTH_EXP, strengthExp);
+                        strengthStat = player.getData(STRENGTH_STAT);
+                    }
                 }
+                player.sendSystemMessage(Component.literal("Detected " + playerDmg + " Damage"));
+                player.sendSystemMessage(Component.literal("Strength level: " + strengthStat));
+                player.sendSystemMessage(Component.literal("Strength exp: " + strengthExp));
+                player.sendSystemMessage(Component.literal("Strength exp Needed: " + strengthExpLevelUp));
             }
-            player.sendSystemMessage(Component.literal("Detected " + playerDmg + " Damage"));
-            player.sendSystemMessage(Component.literal("Strength level: " + strengthStat));
-            player.sendSystemMessage(Component.literal("Strength exp: " + strengthExp));
-            player.sendSystemMessage(Component.literal("Strength exp Needed: " + strengthExpLevelUp));
         }
     }
     public static void setBaseDamage(Player player){
@@ -68,4 +71,5 @@ public class StrengthStat {
             addStrengthExp(player, 1);
         }
     }
+
 }
